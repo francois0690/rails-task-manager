@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="edit">
+    <h1><%= @task.title %></h1>
+    <a href="/tasks/<%= @task.id %>/edit" class="btn btn-primary">Editer tache</a>
+  </div>
+  <h3 class="content"><%= @task.details %></h3>
+  <% if @task.completed %>
+    <p>
+      <i class="fas fa-check-square">  Cette tache est faite, bien joué</i>
+    </p>
+  <% else  %>
+    <p>
+      <i class="fas fa-square">  Cette tache est à faire feignasse</i>
+    </p>
+  <% end %>
+
+  <div>
+    <i class="fas fa-undo"></i>
+    <%= link_to " Retour à la liste des taches", tasks_path %>
+  </div>
+</div>
